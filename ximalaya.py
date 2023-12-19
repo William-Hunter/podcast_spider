@@ -8,6 +8,7 @@ import json
 from bs4 import BeautifulSoup
 import wget
 import str_tool
+import traceback
 
 
 
@@ -40,6 +41,7 @@ def writeJson(JSON_PATH, obj):
 
 
 def downloadAudio(audio_url,title,lastdownload):
+    
     prefix=audio_url.split(".")[-1]
     print("prefix",prefix)
     filename=audioDir+"/"+title.replace(" ","").replace("｜","_").replace("|","_").replace("-","_").replace("/","_").replace("#","_").replace("?","_").replace("？","_").replace(":","_")+"."+prefix
@@ -54,9 +56,12 @@ def getAudio(title,audioId,lastdownload):  #获取到每个音频资源的链接
     if 200==response.status_code:
         trackData = json.loads(response.text)
         if 200==trackData['ret']:
-            audio=trackData['data']['src']
-            print(audio)
-            downloadAudio(audio,title,lastdownload)
+            print("trackData",trackData)
+            audio_url=trackData['data']['src']
+            print("audio_url",audio_url)
+            downloadAudio(audio_url,title,lastdownload)
+    else:
+        print("错误信息\n",response.text)
 
 
 
