@@ -26,8 +26,8 @@ def getHtml(url):
     print(response)
     if 200==response.status_code:
         result= response.text
+        # print(result)
 
-    # print(result)
     return result
 
 
@@ -38,13 +38,15 @@ def parsePage(result,lastdownload,channel,MAX_COUNT):
     
     soup = BeautifulSoup(result, 'html.parser')
     
+    
+
     count=0
     for li in soup.select("ul.jsx-7bbe0f84186f1998.tab > li.jsx-7bbe0f84186f1998"):
         count=count+1
         if count>MAX_COUNT:    # 如果有10次，就直接结束
             return
 
-        # print(li)
+        print(li)
 
         a=li.select_one("a.jsx-744662fb2f5b91b6.card").get("href").strip()
 
@@ -143,7 +145,6 @@ xiaoyuzhoufm_url="https://www.xiaoyuzhoufm.com"
 downloadPath="/opt/data/sync/folders/Podcast"
 
 
-
 date_format = "%Y-%m-%d %H:%M:%S"
 
 if __name__ == "__main__":
@@ -156,7 +157,7 @@ if __name__ == "__main__":
     # print(check_type)
 
     channel_list = readJson(stamp_path)
-    # print(channel_list)
+    print(channel_list)
     loop(check_type,channel_list)
     writeJson(stamp_path, channel_list)
 

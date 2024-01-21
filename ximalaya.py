@@ -69,6 +69,7 @@ def getList(albumId,lastdownload,channel,pageSize):       #获取到频道的音
     response=requests.get(url=LIST_URL.format(albumId,pageSize),headers=HEADERS)
     if 200==response.status_code:
         jsonData = json.loads(response.text)
+        print(jsonData)
         if 200 == jsonData['ret']:
             for track in jsonData['data']['tracks']:
                 title=track['title']
@@ -121,7 +122,20 @@ def process():
 date_format = "%Y-%m-%d %H:%M:%S"
 
 if __name__=="__main__":
-    # getList("46587439",[],10)
+    channel= {
+        "id": "41432866",
+        "max_count": "4",
+        "lastdownload": [
+            "060.自由职业是年轻人的终极梦想么？说出来让我解解馋",
+            "059.高能量人生的秘密，为什么我对生活永远充满激情？",
+            "058.要不是当年积极搞副业，我哪来的留学钱",
+            "057.我们来“颁奖”了！那些让我们沸腾和湿润的电视剧",
+            "061.付菡驾到！充满巨变的2023年，酷女孩们变了吗？"
+        ]
+    }
+
+
+    getList(channel['id'],channel['lastdownload'],channel,1)
     now=time.strftime(date_format,time.localtime(time.time()))
     print(now+"----------------------------------------------------------------------")
     process()

@@ -1,0 +1,39 @@
+{
+  "五分钟英语ByEconFinDaily": {
+    "id": "61a03e3d8aeb74f51671ff5e",
+    "check": "daily",
+    "max_count": 1,
+    "lastdownload": [
+      "S355五分钟英语-About SoftBank 05/15",
+      "S354五分钟英语-US Debt Ceiling 05/11",
+      "S353五分钟英语-OpenAI III 05/08",
+      "S352五分钟英语-Streaming Service 04/20",
+      "S356五分钟英语-Leaving Big Cities 05/22",
+      "S401五分钟英语-Meta and AI 07/11",
+      "S402五分钟英语-Extreme Weather 07/18",
+      "S403五分钟英语-Inflation Recap 07/25",
+      "S404五分钟英语- AI and Education 08/01",
+      "S405五分钟英语- AI and Job Hunting 08/08",
+      "S406五分钟英语- AI and Construction 08/22",
+      "S407五分钟英语- Jay Powell's Speech 08/29",
+      "S501五分钟英语- For Happiness 01/03",
+      "S502五分钟英语- Coffee vs. Tea 01/10"
+    ]
+  },
+  "Go 夜聊": {
+    "id": "aHR0cHM6Ly90YWxrZ28uZm0vaW5kZXgueG1s",
+    "check": "",
+    "lastdownload": [
+      "第 8 期：泛型来了！",
+      "第 7 期：依赖与模块",
+      "第 6 期：Go 语言的编译器",
+      "第 5 期：Go 语言发展的近况 (下)",
+      "第 4 期：Go 语言发展的近况 (上)"
+    ]
+  },
+  "": {
+    "id": "",
+    "check": "",
+    "lastdownload": []
+  }
+}
